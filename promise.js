@@ -102,12 +102,11 @@ let p2 = new MyPromise((resolve, reject) => {
   }, 1000);
 });
 
-// p2.then((data) => data * 2)
-//   .then((val) => val * 2)
-//   .catch((err) => `${err}😠😡`)
-//   .catch((error) => error)
-//   .finally((val) => console.log(val));
+p2.then((data) => data * 2)
+  .then((val) => val * 2)
+  .catch((err) => `${err}😠😡`)
+  .catch((error) => error)
+  .finally((val) => console.log(val));
 
-// 1. in synchronous operations, .then fn doesn't execute later and thenFnContext wouldn't have any context and code throws error.
-//to handle that we check the typeof thenFnContext
+// 1. in synchronous operations, .then fn doesn't execute later and thenFn wouldn't have any context and code throws error. To handle that we check the typeof thenFn
 // 2. when we do, then chaining, we need to maintain the order of the callbacks, for this we use Array
